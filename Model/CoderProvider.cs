@@ -21,7 +21,7 @@ namespace SQLLite_Database.Model
         {
             using var connection = new SqliteConnection(databaseConfig.DatabaseConnectionConfiguration);
 
-            return await connection.QueryAsync<Coder>("SELECT rowid AS Id, UserName, FirstName, LastName, IdNumber, Description FROM Coder;");
+            return await connection.QueryAsync<Coder>("SELECT rowid AS Id, Email, FirstName, LastName, IdNumber, Description FROM Coder;");
         }
     }
 }

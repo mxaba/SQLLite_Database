@@ -18,8 +18,8 @@ namespace SQLLite_Database.Model
         {
             using var connection = new SqliteConnection(databaseConfig.DatabaseConnectionConfiguration);
 
-            await connection.ExecuteAsync("INSERT INTO Coder (UserName, FirstName, LastName, IdNumber, Description)" +
-                "VALUES (@UserName, @FirstName, @LastName, @IdNumber, @Description);", Coder);
+            await connection.ExecuteAsync("INSERT INTO Coder (Email, FirstName, LastName, IdNumber, Description)" +
+                "VALUES (@Email, @FirstName, @LastName, @IdNumber, @Description);", Coder);
         }
     }
 }

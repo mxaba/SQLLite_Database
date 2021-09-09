@@ -29,27 +29,27 @@ namespace SQLLite_Database.Database
                 return;
 
             connection.Execute("Create Table Coder (" +
-                "UserName VARCHAR(100) NOT NULL," +
+                "Email VARCHAR(100) NOT NULL," +
                 "FirstName VARCHAR(100) NOT NULL," +
                 "LastName VARCHAR(100) NOT NULL," +
                 "IdNumber VARCHAR(100) NOT NULL," +
                 "Description VARCHAR(1000) NULL);"
             );
 
+            connection.Execute("CREATE UNIQUE INDEX IndexCoder ON Coder (Email, IdNumber);");
+
             int i = 0;
-            while (i <= 200000)
+            while (i <= 30000)
             {
                 var coderData = new Coder(){
-                    UserName = Faker.Internet.UserName(),
+                    Email = Faker.Internet.Email(),
                     FirstName = Faker.Name.First(),
                     LastName = Faker.Name.Last(),
                     IdNumber = Faker.Identification.UsPassportNumber(),
                     Description = Faker.Lorem.Sentence(3),
                 };
-                Task.Run(async () =>
-                {
+                Task.Run(async () => {
                     await coderRepository.Create(coderData);
-                    // Do any async anything you need here without worry
                 }).GetAwaiter().GetResult();
                 i++;
             }
