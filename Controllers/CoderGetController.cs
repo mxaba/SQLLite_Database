@@ -42,6 +42,12 @@ namespace SQLLite_Database.Controllers
         {
             return await CoderByEmail.GetById(IdNumber);
         }
+
+        [HttpGet("Delete/{Email}")]
+        public async Task<IEnumerable<Coder>> Delete([FromRoute]string email)
+        {
+            return await CoderByEmail.GetById(email);
+        }
  
  
         // POST api/<CodeController>

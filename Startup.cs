@@ -41,6 +41,7 @@ namespace SQLLite_Database
             services.AddSingleton<IDatabaseBootstrap, DatabaseBootstrap>();
             services.AddSingleton<ICoderProvider, CoderProvider>();
             services.AddSingleton<ICoderByEmail, CoderByEmail>();
+            services.AddSingleton<IDeleteUpdate, DeleteUpdate>();
             services.AddSingleton<ICoderRepository, CoderRepository>();
 
         }
