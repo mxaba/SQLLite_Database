@@ -18,7 +18,7 @@ namespace SQLLite_Database.Controllers
             this.coderRepository = coderRepository;
         }
 
-        [HttpGet("Delete/{Email}")]
+        [HttpPost("Delete/{Email}")]
         public async Task<string> Delete([FromRoute]string email)
         {
             return await deleteUpdate.Delete(email);

@@ -53,8 +53,6 @@ namespace SQLLite_Database.Database
                 }).GetAwaiter().GetResult();
                 i++;
             }
-
-            
         }
     }
 }
