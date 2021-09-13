@@ -19,7 +19,7 @@ namespace SQLLite_Database.Controllers
         }
 
         [HttpPost("Delete/{Email}")]
-        public async Task<string> Delete([FromRoute]string email)
+        public async Task<int> Delete([FromRoute]string email)
         {
             return await deleteUpdate.Delete(email);
         }

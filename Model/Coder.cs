@@ -1,5 +1,3 @@
-using Bogus;
-
 namespace SQLLite_Database.Model
 {
     public class Coder

@@ -28,13 +28,14 @@ namespace SQLLite_Database.Model
                 "WHERE Email=@Email;", Coder);
         }
 
-        public async Task<string> Delete(string Email)
+        public async Task<int> Delete(string Email)
         {
 
             using var connection = new SqliteConnection(databaseConfig.DatabaseConnectionConfiguration);
 
-            await connection.ExecuteAsync("DELETE FROM Coder WHERE Email=@Email;", new { Email = Email });
-            return $"Deleted{Email}";
+            var value = await connection.ExecuteAsync("DELETE FROM Coder WHERE Email=@Email;", new { Email = Email });
+
+            return value;
         }
     }
 }
