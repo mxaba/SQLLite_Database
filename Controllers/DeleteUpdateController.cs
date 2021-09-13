@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SQLLite_Database.Model;
@@ -18,18 +18,18 @@ namespace SQLLite_Database.Controllers
             this.coderRepository = coderRepository;
         }
 
-        [HttpPost("Delete/{Email}")]
-        public async Task<int> Delete([FromRoute]string email)
+        [HttpPost("Delete")]
+        public async Task<string> DeleteUser([FromBody]EmailDelete email)
         {
             return await deleteUpdate.Delete(email);
         }
  
  
         // POST api/<CodeController>
-        // [HttpPost]
-        // public async Task Post([FromBody] Coder coder)
-        // {
-        //     await coderRepository.Create(coder);
-        // }
+        [HttpPut]
+        public async Task UpdateUser([FromBody] Coder coder)
+        {
+            await deleteUpdate.Update(coder);
+        }
     }
 }

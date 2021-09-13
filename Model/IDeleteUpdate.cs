@@ -4,7 +4,7 @@ namespace SQLLite_Database.Model
 {
     public interface IDeleteUpdate
     {
-        Task<int> Delete(string Email);
+        Task<string> Delete(EmailDelete email);
         Task Update(Coder Coder);
     }
 }

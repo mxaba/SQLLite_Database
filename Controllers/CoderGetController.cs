@@ -24,11 +24,11 @@ namespace SQLLite_Database.Controllers
             return await CoderByEmail.GetByEmail(Email);
         }
 
-        [HttpGet("EmailExplain/{Email}")]
-        public async Task<IEnumerable<Coder>> GetByEmailExplain([FromRoute]string Email)
-        {
-            return await CoderByEmail.GetByEmailExplain(Email);
-        }
+        // [HttpGet("EmailExplain/{Email}")]
+        // public async Task<IEnumerable<Coder>> GetByEmailExplain([FromRoute]string Email)
+        // {
+        //     return await CoderByEmail.GetByEmailExplain(Email);
+        // }
 
         // [Route("api/Coder/id/{id}")]
         [HttpGet("IdNumber/{IdNumber}")]
@@ -37,11 +37,11 @@ namespace SQLLite_Database.Controllers
             return await CoderByEmail.GetById(IdNumber);
         }
 
-        [HttpGet("IdNumberExplain/{IdNumber}")]
-        public async Task<IEnumerable<Coder>> GetByIdExplain([FromRoute]string IdNumber)
-        {
-            return await CoderByEmail.GetById(IdNumber);
-        }
+        // [HttpGet("IdNumberExplain/{IdNumber}")]
+        // public async Task<IEnumerable<Coder>> GetByIdExplain([FromRoute]string IdNumber)
+        // {
+        //     return await CoderByEmail.GetById(IdNumber);
+        // }
  
  
         // POST api/<CodeController>

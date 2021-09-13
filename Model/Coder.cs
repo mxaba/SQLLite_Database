@@ -10,4 +10,9 @@ namespace SQLLite_Database.Model
         public string Description { get; set; }
             
     }
+
+    public class EmailDelete {
+        public string IdNumber { get; set; }
+        public string Email { get; set; }
+    }
 }

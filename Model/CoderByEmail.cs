@@ -34,14 +34,14 @@ namespace SQLLite_Database.Model
         {
             using var connection = new SqliteConnection(databaseConfig.DatabaseConnectionConfiguration);
 
-            return await connection.QueryAsync<Coder>("EXPLAIN QUERY PLAN SELECT rowid AS Id, Email, FirstName, LastName, IdNumber, Description FROM Coder WHERE IdNumber=@Email;", new{Email=Email});
+            return await connection.QueryAsync<Coder>("EXPLAIN QUERY PLAN SELECT rowid AS Id, Email, FirstName, LastName, IdNumber, Description FROM Coder WHERE Email=@Email;", new{Email=Email});
         }
 
         public async Task<IEnumerable<Coder>> GetByIdExplain(string IdNumber)
         {
             using var connection = new SqliteConnection(databaseConfig.DatabaseConnectionConfiguration);
 
-            return await connection.QueryAsync<Coder>("EXPLAIN QUERY PLAN SELECT rowid AS Id, Email, FirstName, LastName, IdNumber, Description FROM Coder WHERE Email=@IdNumber;", new{IdNumber=IdNumber});
+            return await connection.QueryAsync<Coder>("EXPLAIN QUERY PLAN SELECT rowid AS Id, Email, FirstName, LastName, IdNumber, Description FROM Coder WHERE IdNumber=@IdNumber;", new{IdNumber=IdNumber});
         }
     }
 }
